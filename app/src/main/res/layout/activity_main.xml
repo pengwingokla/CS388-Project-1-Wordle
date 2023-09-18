@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary">
+
+        <TextView
+            android:id="@+id/toolbar_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Wordle"
+            android:textSize="30sp"
+            android:textColor="@android:color/white"
+            android:layout_gravity="center"/>
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <TextView
+        android:id="@+id/Line1Text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:paddingLeft="15sp"
+        android:textSize="20sp"
+        android:text="GUESS 1" />
+
+    <TextView
+        android:id="@+id/Line2Text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/Line1Text"
+        android:layout_marginBottom="-50dp"
+        android:paddingLeft="15sp"
+        android:text="GUESS 1 CHECK"
+        android:textSize="20sp" />
+    <TextView
+        android:id="@+id/Line3Text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/Line2Text"
+        android:layout_marginBottom="-50dp"
+        android:paddingLeft="15sp"
+        android:text="GUESS 2"
+        android:textSize="20sp" />
+    <TextView
+        android:id="@+id/Line4Text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/Line3Text"
+        android:layout_marginBottom="-50dp"
+        android:paddingLeft="15sp"
+        android:text="GUESS 2 CHECK"
+        android:textSize="20sp" />
+    <TextView
+        android:id="@+id/Line5Text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/Line4Text"
+        android:layout_marginBottom="-50dp"
+        android:paddingLeft="15sp"
+        android:text="GUESS 3"
+        android:textSize="20sp" />
+    <TextView
+        android:id="@+id/Line6Text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/Line5Text"
+        android:layout_marginBottom="-50dp"
+        android:paddingLeft="15sp"
+        android:text="GUESS 3 CHECK"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/guess1TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="280dp"
+        android:layout_marginTop="100dp"
+        android:paddingRight="15sp"
+        android:text="ABCD"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/result1TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/guess1TextView"
+        android:layout_marginBottom="-50dp"
+        android:layout_alignStart="@+id/guess1TextView"
+        android:paddingRight="15sp"
+        android:text="ABCD"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/guess2TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/result1TextView"
+        android:layout_alignStart="@+id/guess1TextView"
+        android:layout_marginBottom="-50dp"
+        android:paddingRight="15sp"
+        android:text="ABCD"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/result2TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/guess2TextView"
+        android:layout_alignStart="@+id/guess1TextView"
+        android:layout_marginBottom="-50dp"
+        android:paddingRight="15sp"
+        android:text="ABCD"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/guess3TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/result2TextView"
+        android:layout_alignStart="@+id/guess1TextView"
+        android:layout_marginBottom="-50dp"
+        android:paddingRight="15sp"
+        android:text="ABCD"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/result3TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/guess3TextView"
+        android:layout_alignStart="@+id/guess1TextView"
+        android:layout_marginBottom="-50dp"
+        android:paddingRight="15sp"
+        android:text="ABCD"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/targetWord"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="550dp"
+        android:text="ABCD"
+        android:textSize="50sp" />
+
+    <EditText
+        android:id="@+id/guessEditText"
+        android:layout_width="200sp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="15sp"
+        android:layout_marginBottom="15sp"
+
+        android:hint="Enter text..."/>
+
+    <Button
+        android:id="@+id/submitButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="15sp"
+        android:layout_toEndOf="@id/guessEditText"
+        android:layout_marginStart="10dp"
+        android:text="SUBMIT"
+        android:background="@drawable/rectangle_button" /> <!-- Reference the custom shape -->
+
+
+
+</RelativeLayout>
