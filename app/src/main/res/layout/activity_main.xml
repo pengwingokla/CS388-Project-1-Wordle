@@ -85,7 +85,7 @@
         android:layout_marginStart="280dp"
         android:layout_marginTop="100dp"
         android:paddingRight="15sp"
-        android:text="ABCD"
+        android:text="----"
         android:textSize="20sp" />
 
     <TextView
@@ -96,7 +96,7 @@
         android:layout_marginBottom="-50dp"
         android:layout_alignStart="@+id/guess1TextView"
         android:paddingRight="15sp"
-        android:text="ABCD"
+        android:text="----"
         android:textSize="20sp" />
 
     <TextView
@@ -107,7 +107,7 @@
         android:layout_alignStart="@+id/guess1TextView"
         android:layout_marginBottom="-50dp"
         android:paddingRight="15sp"
-        android:text="ABCD"
+        android:text="----"
         android:textSize="20sp" />
 
     <TextView
@@ -118,7 +118,7 @@
         android:layout_alignStart="@+id/guess1TextView"
         android:layout_marginBottom="-50dp"
         android:paddingRight="15sp"
-        android:text="ABCD"
+        android:text="----"
         android:textSize="20sp" />
 
     <TextView
@@ -129,7 +129,7 @@
         android:layout_alignStart="@+id/guess1TextView"
         android:layout_marginBottom="-50dp"
         android:paddingRight="15sp"
-        android:text="ABCD"
+        android:text="----"
         android:textSize="20sp" />
 
     <TextView
@@ -140,7 +140,7 @@
         android:layout_alignStart="@+id/guess1TextView"
         android:layout_marginBottom="-50dp"
         android:paddingRight="15sp"
-        android:text="ABCD"
+        android:text="----"
         android:textSize="20sp" />
 
     <TextView
@@ -149,17 +149,16 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="550dp"
-        android:text="ABCD"
+        android:text="_ _ _ _"
         android:textSize="50sp" />
 
     <EditText
         android:id="@+id/guessEditText"
-        android:layout_width="200sp"
+        android:layout_width="179sp"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_marginLeft="15sp"
+        android:layout_marginLeft="10sp"
         android:layout_marginBottom="15sp"
-
         android:hint="Enter text..."/>
 
     <Button
@@ -169,10 +168,20 @@
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="15sp"
         android:layout_toEndOf="@id/guessEditText"
-        android:layout_marginStart="10dp"
+        android:layout_marginStart="5dp"
         android:text="SUBMIT"
-        android:background="@drawable/rectangle_button" /> <!-- Reference the custom shape -->
+        android:background="@drawable/rectangle_button" />
 
+    <Button
+        android:id="@+id/resetButton"
+        android:layout_width="55dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="5dp"
+        android:layout_marginBottom="15sp"
+        android:layout_toEndOf="@id/submitButton"
+        android:background="@drawable/rectangle_button"
+        android:text="X" />
 
 
 </RelativeLayout>
