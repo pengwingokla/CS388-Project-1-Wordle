@@ -40,6 +40,24 @@ class MainActivity : AppCompatActivity() {
         val fourLetterWord = FourLetterWordList()
         var targetWord = fourLetterWord.getRandomFourLetterWord()
 
+        // Reset button
+        val resetButton = findViewById<Button>(R.id.resetButton)
+        resetButton.setOnClickListener {
+            val newFourLetterWord = fourLetterWord.getRandomFourLetterWord()
+
+            guess1TextView.text = "----"
+            result1TextView.text = "----"
+            guess2TextView.text = "----"
+            result2TextView.text = "----"
+            guess3TextView.text = "----"
+            result3TextView.text = "----"
+            currentGuess = 1
+            targetWordTextView.text = ""
+
+            submitButton.isEnabled = true  // Turn the submitButton function off
+            targetWord = newFourLetterWord // Set the new target word
+        }
+
         // Initialize TextViews for guesses and results
         guess1TextView = findViewById(R.id.guess1TextView)
         result1TextView = findViewById(R.id.result1TextView)
