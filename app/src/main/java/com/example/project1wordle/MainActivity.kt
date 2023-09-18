@@ -17,17 +17,16 @@ class MainActivity : AppCompatActivity() {
     private lateinit var guessEditText: EditText
     private lateinit var submitButton: Button
     private lateinit var targetWordTextView: TextView
-
-    // Declare TextViews for guesses and results
     private lateinit var guess1TextView: TextView
     private lateinit var result1TextView: TextView
     private lateinit var guess2TextView: TextView
     private lateinit var result2TextView: TextView
     private lateinit var guess3TextView: TextView
     private lateinit var result3TextView: TextView
+    private lateinit var streakCounter: TextView
 
-    // Counter to keep track of the current guess
     private var currentGuess = 1
+    private var streakCount = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,11 +35,18 @@ class MainActivity : AppCompatActivity() {
         guessEditText = findViewById(R.id.guessEditText)
         submitButton = findViewById(R.id.submitButton)
         targetWordTextView = findViewById(R.id.targetWord)
+        streakCounter = findViewById(R.id.streakCounter)
+        guess1TextView = findViewById(R.id.guess1TextView)
+        result1TextView = findViewById(R.id.result1TextView)
+        guess2TextView = findViewById(R.id.guess2TextView)
+        result2TextView = findViewById(R.id.result2TextView)
+        guess3TextView = findViewById(R.id.guess3TextView)
+        result3TextView = findViewById(R.id.result3TextView)
 
         val fourLetterWord = FourLetterWordList()
         var targetWord = fourLetterWord.getRandomFourLetterWord()
 
-        // Reset button
+        // ================== RESET BUTTON EVENTS ==================
         val resetButton = findViewById<Button>(R.id.resetButton)
         resetButton.setOnClickListener {
             val newFourLetterWord = fourLetterWord.getRandomFourLetterWord()
@@ -58,14 +64,7 @@ class MainActivity : AppCompatActivity() {
             targetWord = newFourLetterWord // Set the new target word
         }
 
-        // Initialize TextViews for guesses and results
-        guess1TextView = findViewById(R.id.guess1TextView)
-        result1TextView = findViewById(R.id.result1TextView)
-        guess2TextView = findViewById(R.id.guess2TextView)
-        result2TextView = findViewById(R.id.result2TextView)
-        guess3TextView = findViewById(R.id.guess3TextView)
-        result3TextView = findViewById(R.id.result3TextView)
-
+        // ================== SUBMIT BUTTON EVENTS ==================
         submitButton.setOnClickListener {
             val guess = guessEditText.text.toString().trim()
             val guessResult = handleGuess(guess, targetWord, currentGuess)
@@ -87,8 +86,14 @@ class MainActivity : AppCompatActivity() {
             }
             currentGuess++
 
-            // If all guesses are used, display the target word
-            if (currentGuess > 3 || guessResult.correctness == "CCCC") {
+            // Update streak counter
+            if (currentGuess <= 3 && guessResult.correctness == "CCCC") {
+                streakCount++
+                streakCounter.text = "$streakCount"
+            }
+
+            // Display the target word
+            if (currentGuess  > 3 || guessResult.correctness == "CCCC") {
                 targetWordTextView.text = "$targetWord"
                 submitButton.isEnabled = false
             }
