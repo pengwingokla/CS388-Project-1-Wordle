@@ -1,4 +1,4 @@
-# Android Project 1 - *Name of App Here*
+# Android Project 1 - WORDLE
 
 Submitted by: NGUYEN THAI THAO UYEN
 
